@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../includes/head.ejs'); %>
+<body>
+    <%- include('../includes/nav.ejs'); %>
+<main>
+    <%- include('../includes/message.ejs'); %>
+    <div class="twocol">
+    <% data.forEach(pet=>{ %>
+        <article class="product simple">          
+            <div class="book_info">
+                <h2 class="book_title"><%=user.name%></h2>
+                <div class="row">
+                    <a class="button" href="book">Details</a>
+                    <% if(userLevel>0) { %>
+                        <form action="/cart" method="post">
+                            <button class="button" type="submit">Add to Cart</button>
+                            <input type="hidden" name="isbn" value="<%=  %>">
+                            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                        </form>
+                    <% } %>
+
+                </div>
+            </div>
+        </article>
+    <% }); %>
+    </div>  
+</main>
+</body>
+</html>
