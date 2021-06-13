@@ -6,10 +6,6 @@ const Pet = new Schema({
     type: String,
     required: true
   },
-  species: {
-    type: String,
-    required: true
-  },
   breed: {
     type: String,
     required: true
@@ -23,6 +19,14 @@ const Pet = new Schema({
     required: true
   },
   activityLevel: {
+    type: String,
+    required: true
+  },
+  size: {
+    type: String,
+    required: true
+  },
+  imageUrl: {
     type: String,
     required: true
   },
